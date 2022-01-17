@@ -1,17 +1,16 @@
-package org.iesfm.jms;
+package org.iesfm.jms.sender;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.jms.annotation.EnableJms;
 
 @SpringBootApplication
-@EnableJms
-public class Main {
+public class SenderMain {
     public static void main(String[] args) {
         ConfigurableApplicationContext context =
-                SpringApplication.run(Main.class, args);
+                SpringApplication.run(SenderMain.class, args);
 
         context.getBean(HelloWorldEmailSender.class).send();
+        context.close();
     }
 }
