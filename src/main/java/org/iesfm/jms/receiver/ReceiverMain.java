@@ -7,8 +7,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class ReceiverMain {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context =
-                SpringApplication.run(ReceiverMain.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(ReceiverMain.class, args);
 
         context.getBean(EmailReceiver.class);
     }
